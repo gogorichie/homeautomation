@@ -221,8 +221,8 @@
       "pluginVersion": "7.5.16",
       "targets": [
         {
-          "lat": "42.086185",
-          "lon": "-88.447031",
+          "lat": "42.10378721964673",
+          "lon": "-88.47021837126807",
           "refId": "A",
           "target": "summary",
           "type": "timeseries"
@@ -2345,7 +2345,6 @@
           },
           "mappings": [
             {
-              "$$hashKey": "object:30900",
               "id": 0,
               "op": "=",
               "text": "N/A",
@@ -3129,5 +3128,5 @@
   "timezone": "",
   "title": "One Dashboard",
   "uid": "vdGVGcwWz",
-  "version": 82
+  "version": 83
 }
