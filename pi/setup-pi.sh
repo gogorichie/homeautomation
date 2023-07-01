@@ -13,8 +13,8 @@ apt upgrade -y
 # Install Telegraf
 apt install -y telegraf
 
-# Start the Telegraf service
-systemctl start telegraf
+# Download the Telegraf configuration from the provided URL
+wget -O /etc/telegraf/telegraf.conf https://raw.githubusercontent.com/gogorichie/homeautomation/main/telegraf/telegraf.conf
 
-# Enable Telegraf to start on boot
-systemctl enable telegraf
+# Restart Telegraf to apply the new configuration
+systemctl restart telegraf
