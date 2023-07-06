@@ -7,7 +7,22 @@
         upgrade: 'yes'
     - name: set timezone to Chicago
       shell: timedatectl set-timezone America/Chicago
-
+    - name: Install Telegraf
+      apt:
+        name: telegraf
+        state: present
+      vars:
+        ansible_python_interpreter: /usr/bin/python3
+    - name: Download the new Telegraf config file
+      get_url:
+        url: "https://raw.githubusercontent.com/gogorichie/homeautomation/main/telegraf/telegraf.conf"
+        dest: "/etc/telegraf/telegraf.conf"
+        mode: '0644'
+    - name: Restart Telegraf service
+      service:
+        name: telegraf
+        state: restarted
+        
 - name: Update PiHole Machine
   hosts: "*52"
   become: yes
